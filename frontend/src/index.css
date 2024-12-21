@@ -1,0 +1,188 @@
+/* Styles for the website */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero section styles */
+.hero {
+  text-align: center;
+  padding: 200px 20px 120px;
+  color: white;
+  margin-top: 80px;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image-carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: carouselFade 15s infinite;
+}
+
+.hero-image-carousel img:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.hero-image-carousel img:nth-child(3) {
+  animation-delay: 10s;
+}
+
+@keyframes carouselFade {
+  0%, 33.33% { opacity: 1; }
+  33.34%, 100% { opacity: 0; }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* About section styles */
+.about {
+  display: flex;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.about-content {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Coaches section styles */
+.coaches {
+  padding: 80px 20px;
+  position: relative;
+}
+
+.coaches-background {
+  position: relative;
+  z-index: 1;
+}
+
+.coaches::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/karate-bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.coach-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Testimonials section styles */
+.testimonials {
+  padding: 80px 20px;
+  position: relative;
+}
+
+.testimonials-background {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/karate-bg3.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about h2,
+.coaches h2,
+.testimonials h2,
+.achievements h2,
+.contact h2 {
+  animation: fadeInUp 1s ease-out;
+}
+
+.coach-card,
+blockquote {
+  animation: fadeInUp 1s ease-out;
+  animation-fill-mode: both;
+}
+
+.coach-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+blockquote:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
